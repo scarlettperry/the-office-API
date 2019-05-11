@@ -3,4 +3,9 @@ class Api::V1::BranchesController < ApplicationController
         @branches = Branch.all
         render json: @branches
     end
+
+    #make a new branch
+
+    #edit branch name
+    
 end

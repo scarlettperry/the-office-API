@@ -4,10 +4,9 @@ class Api::V1::EmployeesController < ApplicationController
         render json: @employees
     end
 
-    # make a create endpoint
     def create
         @employee = Employee.create(employee_params)
-        if @employee
+        if @employee.valid?
             render json: @employee, status: :accepted
         else
             render json: { errors: @employee.errors.full_messages}, status: :unprocessable_entity
@@ -15,11 +14,10 @@ class Api::V1::EmployeesController < ApplicationController
         
     end
 
-    #add success & error message
     def update
         @employee = Employee.find(params[:id])
         @employee.update(employee_params)
-        if @employee
+        if @employee.valid?
             render json: @employee, status: :accepted
         else
             render json: {errors: @employee.errors.full_messages}, status: :unprocessable_entity

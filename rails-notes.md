@@ -71,3 +71,6 @@ structure
 13. create the controllers ex: `rails g controller api/v1/Employees` <- plural and camelCase
 
 14. in controllers, `render json: @employees`
+
+- error handling
+- adding new column to existing table `rails g migration AddActiveToEmployee active:boolean` & `rake db:migrate`

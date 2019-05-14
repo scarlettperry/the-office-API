@@ -24,11 +24,11 @@ class Api::V1::EmployeesController < ApplicationController
         end
     end
 
-    #makde a delete endpoint
+    # TODO: make "delete endpoint", set active to false"
 
     private 
     def employee_params
-        params.require(:employee).permit(:name, :title, :branch_id, :department_id)
+        params.require(:employee).permit(:name, :title, :active, :branch_id, :department_id)
     end
     
 end

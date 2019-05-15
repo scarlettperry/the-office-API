@@ -74,3 +74,4 @@ structure
 
 - error handling
 - adding new column to existing table `rails g migration AddActiveToEmployee active:boolean` & `rake db:migrate`
+- `rake routes` to see URL endpoint for each CRUD action

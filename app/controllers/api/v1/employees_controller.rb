@@ -25,6 +25,11 @@ class Api::V1::EmployeesController < ApplicationController
     end
 
     # TODO: make "delete endpoint", set active to false"
+    def destroy
+        @employee = Employee.find(params[:id])
+        @employee.update(active: false)
+        render json: @employee, status: :accepted
+    end
 
     private 
     def employee_params
